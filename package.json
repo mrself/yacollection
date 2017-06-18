@@ -1,0 +1,16 @@
+{
+  "name": "yacollection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yaroslav Vavrysh <yaruk.my@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars-adapter": "github:mrself/handlebars-adapter#v1.0.0",
+    "inherit-class": "github:mrself/inherit-class#v1.1.0",
+    "yacomponent": "github:mrself/yacomponent#v1.0.0"
+  }
+}
