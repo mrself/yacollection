@@ -1,6 +1,6 @@
 var Component = require('yacomponent'),
 	inheritClass = require('inherit-class'),
-	Item = require('./Item'),
+	Item = Collection.Item = require('./Item'),
 	handlebars = require('handlebars-adapter');
 
 function Collection() {
