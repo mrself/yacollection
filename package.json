@@ -1,10 +1,10 @@
 {
   "name": "yacollection",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "src/Index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postversion": "git checkout master && git merge develop && git push && git push --tags && git checkout develop"
   },
   "author": "Yaroslav Vavrysh <yaruk.my@gmail.com>",
   "license": "MIT",
@@ -12,8 +12,5 @@
     "handlebars-adapter": "github:mrself/handlebars-adapter#v1.0.0",
     "inherit-class": "github:mrself/inherit-class#v1.1.2",
     "yacomponent": "github:mrself/yacomponent#v1.1.0"
-  },
-  "scripts": {
-    "postversion": "git checkout master && git merge develop && git push && git push --tags && git checkout develop"
   }
 }
