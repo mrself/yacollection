@@ -1,11 +1,11 @@
-var Base = require('Services/Component/Base'),
+var Component = require('yacomponent'),
 	inheritClass = require('inherit-class');
 
 function Item() {
 	
 }
 
-inheritClass(Item, Base, 'base');
+inheritClass(Item, Component, 'component');
 
 Item.prototype = $.extend({}, Item.prototype, {
 	init: function() {
