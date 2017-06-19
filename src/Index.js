@@ -92,7 +92,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	addByData: function(data) {
-		var html = this.template(data);
+		var html = this.fakeItem.template(data);
 		var item = this.initItem({$el: $(html), data: data});
 		this.add(item, true);
 	},
