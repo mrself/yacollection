@@ -23,7 +23,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	init: function() {
 		this.items = [];
 		this.defineParentName();
-		Base.prototype.init.call(this);
+		Component.prototype.init.call(this);
 		this.makeFakeItem();
 		this.defineItems();
 		this.defineEvents();

@@ -9,7 +9,7 @@ inheritClass(Item, Component, 'component');
 
 Item.prototype = $.extend({}, Item.prototype, {
 	init: function() {
-		Base.prototype.init.call(this);
+		Component.prototype.init.call(this);
 		if (this.options.fake) return;
 		this.data = this.options.data;
 	},
