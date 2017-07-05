@@ -113,7 +113,10 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	initItem: function(options) {
-		options = $.extend({dName: this.options.parent.makeName(this.getItemDName())}, options, this.getItemOptions());
+		options = $.extend({
+			dName: this.options.parent.makeName(this.getItemDName()),
+			template: this.options.itemTemplate
+		}, options, this.getItemOptions());
 		return this.options.Item.init(options);
 	},
 
