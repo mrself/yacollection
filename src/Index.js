@@ -123,6 +123,13 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	getItemOptions: function() {
 		return {};
 	},
+
+	clear: function() {
+		this.items.forEach(function(i) {
+			i.$el.remove();
+		});
+		this.items = [];
+	},
 });
 Collection.prototype.constructor = Collection;
 
