@@ -11,6 +11,6 @@
   "dependencies": {
     "handlebars-adapter": "github:mrself/handlebars-adapter#v1.0.0",
     "inherit-class": "github:mrself/inherit-class#v1.1.2",
-    "yacomponent": "github:mrself/yacomponent#v1.4.0"
+    "yacomponent": "github:mrself/yacomponent#v1.5.0"
   }
 }
