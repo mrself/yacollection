@@ -1,7 +1,6 @@
 var Component = require('yacomponent'),
 	inheritClass = require('inherit-class'),
-	Item = Collection.Item = require('./Item'),
-	handlebars = require('handlebars-adapter');
+	Item = Collection.Item = require('./Item');
 
 function Collection() {
 	this.items = [];
@@ -31,10 +30,6 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 
 	makeFakeItem: function() {
 		this.fakeItem = this.initItem({$el: $([]), fake: true});
-	},
-
-	defineTemplate: function() {
-		this.template = handlebars.compile(this.options.parent.makeName(this.getItemDName()));
 	},
 
 	defineParentName: function() {
