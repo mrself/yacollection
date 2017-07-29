@@ -5,8 +5,6 @@ var Component = require('yacomponent'),
 function Collection() {
 	this.items = [];
 
-	this.template = null;
-
 	this.fakeItem = undefined;
 }
 
