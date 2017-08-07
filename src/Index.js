@@ -27,7 +27,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	makeFakeItem: function() {
-		this.fakeItem = this.initItem({$el: $([]), fake: true});
+		this.fakeItem = this.initItem({$el: $([]), fake: true, instance: false});
 	},
 
 	defineParentName: function() {
