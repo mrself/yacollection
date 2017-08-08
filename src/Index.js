@@ -130,6 +130,12 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 		});
 		this.items = [];
 	},
+
+	getData: function() {
+		return this.items.map(function(i) {
+			return i.data;
+		});
+	},
 });
 Collection.prototype.constructor = Collection;
 
