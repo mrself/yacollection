@@ -2,7 +2,7 @@ var Component = require('yacomponent'),
 	inheritClass = require('inherit-class');
 
 function Item() {
-	
+	this.data = {};
 }
 
 inheritClass(Item, Component, 'component');
