@@ -15,7 +15,7 @@ Item.prototype = $.extend({}, Item.prototype, {
 
 	itemInit: function() {
 		if (this.options.fake) return;
-		this.data = this.options.data;
+		this.data = $.extend(this.data, this.options.data);
 	},
 });
 Item.prototype.constructor = Item;
