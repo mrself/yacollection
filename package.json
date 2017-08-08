@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "inherit-class": "github:mrself/inherit-class#v1.1.2",
-    "yacomponent": "github:mrself/yacomponent#v1.6.3"
+    "yacomponent": "github:mrself/yacomponent#v1.6.4"
   }
 }
