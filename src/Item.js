@@ -10,6 +10,10 @@ inheritClass(Item, Component, 'component');
 Item.prototype = $.extend({}, Item.prototype, {
 	init: function() {
 		Component.prototype.init.call(this);
+		this.itemInit();
+	},
+
+	itemInit: function() {
 		if (this.options.fake) return;
 		this.data = this.options.data;
 	},
