@@ -85,9 +85,13 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	addByData: function(data) {
-		var html = this.fakeItem.template(data);
+		var html = this.render(data);
 		var item = this.initItem({$el: $(html), data: data});
 		this.add(item, true);
+	},
+
+	render: function(data) {
+		throw new Error('yacollection: #render is not implemented');
 	},
 
 	addPatchByData: function(data) {
