@@ -9,7 +9,8 @@
   "author": "Yaroslav Vavrysh <yaruk.my@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "i": "^0.3.5",
     "inherit-class": "github:mrself/inherit-class#v1.1.2",
-    "yacomponent": "github:mrself/yacomponent#v1.7.0"
+    "yacomponent": "github:mrself/yacomponent#v1.8.0"
   }
 }
