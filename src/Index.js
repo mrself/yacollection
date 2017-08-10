@@ -140,7 +140,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	getItemOptions: function() {
-		return {};
+		return this.options.item;
 	},
 
 	clear: function() {
@@ -160,6 +160,11 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 		this.$el[0].innerHTML = html;
 		this.items = [];
 		this.defineItems();
+	},
+
+	append: function(html) {
+		var $items = $(html).appendTo(this.$el);
+		$items.each(this.define.bind(this));
 	},
 });
 Collection.prototype.constructor = Collection;
