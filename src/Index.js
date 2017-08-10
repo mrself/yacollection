@@ -6,6 +6,8 @@ function Collection() {
 	this.items = [];
 
 	this.fakeItem = undefined;
+
+	this.lastIndex = 0;
 }
 
 Collection.defaults = {
@@ -81,6 +83,8 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	make: function(el) {
 		var $el = $(el);
 		var data = $el.data(this.options.parent.dName + '-' + this.options.Item.defaults.dName);
+		data = data || {};
+		data.index = this.lastIndex++;
 		return this.initItem({$el: $el, data: data});
 	},
 
@@ -146,6 +150,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 			i.$el.remove();
 		});
 		this.items = [];
+		this.lastIndex = 0;
 	},
 
 	getData: function() {
