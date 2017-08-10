@@ -113,9 +113,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 
 	addPatchByData: function(data) {
 		var self = this;
-		data.forEach(function(i) {
-			self.addByData(i);
-		});
+		data.forEach(this.addByData.bind(this));
 	},
 
 	clickAdd: function() {
