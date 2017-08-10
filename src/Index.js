@@ -70,12 +70,29 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 
 	defineItems: function() {
 		var self = this;
-		this.options.parent.find(this.getItemDName()).each(function() {
-			var $el = $(this);
-			var data = $el.data(self.options.parent.dName + '-' + self.options.Item.defaults.dName);
-			var item = self.initItem({$el: $el, data: data});
-			self.add(item);
-		});
+		this.$items = this.options.parent.find(this.getItemDName());
+		this.setLimit();
+		this.$items.each(this.define.bind(this));
+	},
+
+	define: function(i, el) {
+		this.add(this.make(el));
+	},
+
+	make: function(el) {
+		var $el = $(el);
+		var data = $el.data(this.options.parent.dName + '-' + this.options.Item.defaults.dName);
+		return this.initItem({$el: $el, data: data});
+	},
+
+	setLimit: function() {
+		if (!this.options.limit) return;
+		this.$items.slice(this.options.limit)
+			.detach()
+			.each(this.define.bind(this))
+			.get();
+		this.removedItems = this.items;
+		this.items = [];
 	},
 
 	add: function(item, insert) {
