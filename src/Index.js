@@ -69,7 +69,6 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	defineItems: function() {
-		var self = this;
 		this.$items = this.options.parent.find(this.getItemDName());
 		this.setLimit();
 		this.$items.each(this.define.bind(this));
@@ -112,7 +111,6 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	addPatchByData: function(data) {
-		var self = this;
 		data.forEach(this.addByData.bind(this));
 	},
 
