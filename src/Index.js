@@ -155,6 +155,12 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 			return i.data;
 		});
 	},
+
+	insert: function(html) {
+		this.$el[0].innerHTML = html;
+		this.items = [];
+		this.defineItems();
+	},
 });
 Collection.prototype.constructor = Collection;
 
