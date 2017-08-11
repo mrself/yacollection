@@ -61,6 +61,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	getByEl: function(el) {
+		el = el instanceof $ ? el[0] : el;
 		return this.items.filter(function(item) {
 			return item.$el[0] === el || item.$el.find(el).length;
 		})[0];
