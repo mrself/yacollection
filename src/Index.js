@@ -78,7 +78,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	define: function(i, el) {
-		this.add(this.make(el));
+		return this.add(this.make(el));
 	},
 
 	make: function(el) {
@@ -103,6 +103,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 		insert = typeof insert == 'undefined' ? false : insert;
 		this.items.push(item);
 		if (insert) this.$el.append(item.$el);
+		return item;
 	},
 
 	addByData: function(data) {
@@ -167,8 +168,12 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 	},
 
 	append: function(html) {
-		var $items = $(html).appendTo(this.$el);
-		$items.each(this.define.bind(this));
+		var $html = $(html);
+		var $items;
+		var itemSelector = this.options.parent.makeSelector(this.getItemDName());
+		if ($html.is(itemSelector)) $items = $html;
+		else $items = $html.find(itemSelector);
+		return $items.appendTo(this.$el).map(this.define.bind(this));
 	},
 });
 Collection.prototype.constructor = Collection;
