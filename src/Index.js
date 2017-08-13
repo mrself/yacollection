@@ -133,6 +133,11 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 		var index = this.items.indexOf(item);
 		item.$el.remove();
 		this.items.splice(index, 1);
+		this.$el.trigger(this.eventName('remove'), item);
+	},
+
+	eventName: function(action) {
+		return this.options.dName.replace(new RegExp(this.DelOptions.elSep), '/') + ':remove';
 	},
 
 	initItem: function(options) {
