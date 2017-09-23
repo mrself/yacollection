@@ -103,6 +103,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 		insert = typeof insert == 'undefined' ? false : insert;
 		this.items.push(item);
 		if (insert) this.$el.append(item.$el);
+		this.$el.trigger(this.eventName('add'), item);
 		return item;
 	},
 
