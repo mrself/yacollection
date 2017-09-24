@@ -83,10 +83,7 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 
 	make: function(el) {
 		var $el = $(el);
-		var data = $el.data(this.options.parent.dName + '-' + this.options.Item.defaults.dName);
-		data = data || {};
-		data.index = this.lastIndex++;
-		return this.initItem({$el: $el, data: data});
+		return this.initItem({$el: $el});
 	},
 
 	setLimit: function() {
@@ -141,12 +138,20 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 		options = $.extend({
 			dName: this.options.parent.makeName(this.getItemDName()),
 			template: this.options.itemTemplate
-		}, options, this.getItemOptions());
+		}, options, this.getItemOptions(options));
 		return this.options.Item.init(options);
 	},
 
-	getItemOptions: function() {
-		return this.options.item;
+	getItemOptions: function(startingOptions) {
+		if (startingOptions.fake) {
+			var data = {};
+		} else {
+			var data = startingOptions.$el
+				.data(this.options.parent.dName + '-' + this.options.Item.defaults.dName);
+			data = data || {};
+			data.index = this.lastIndex++;
+		}
+		return $.extend(this.options.item, {data: data});
 	},
 
 	clear: function() {
