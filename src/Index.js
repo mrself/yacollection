@@ -137,10 +137,6 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 		this.$el.trigger(this.eventName('remove'), item);
 	},
 
-	eventName: function(action) {
-		return this.options.dName.replace(new RegExp(this.DelOptions.elSep), '/') + ':remove';
-	},
-
 	initItem: function(options) {
 		options = $.extend({
 			dName: this.options.parent.makeName(this.getItemDName()),
