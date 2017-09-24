@@ -131,7 +131,16 @@ Collection.prototype = $.extend({}, Collection.prototype, {
 		var index = this.items.indexOf(item);
 		item.$el.remove();
 		this.items.splice(index, 1);
+		this.updateIndex();
 		this.$el.trigger(this.eventName('remove'), item);
+	},
+
+	updateIndex: function() {
+		var lastIndex = 0;
+		this.items.forEach(function(i) {
+			lastIndex = i.data.index = i.$el.index();
+		});
+		this.lastIndex = lastIndex;
 	},
 
 	initItem: function(options) {
